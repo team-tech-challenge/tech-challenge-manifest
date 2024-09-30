@@ -26,7 +26,7 @@ config:
   NODE_ENV: "development"
   APP_NAME: "application"
   APP_KEY: "# ------ #"
-  APP_URL: "http://${HOST}:${PORT}"
+#  APP_URL: "http://${HOST}:${PORT}"
 
 # Reference names for ConfigMap and Secret
 configMapRefName: default-tech-challenge
