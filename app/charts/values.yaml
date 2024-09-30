@@ -8,8 +8,8 @@ nameOverride: tech-challenge
 
 # Image configuration
 image:
-  repository: fwcpereira/tech-challenge
-  tag: v3.0.0
+  repository: 575403774961.dkr.ecr.us-east-1.amazonaws.com/tech-challenge
+  tag: "9dd2f6b"
   pullPolicy: Always
 
 # Service configuration
