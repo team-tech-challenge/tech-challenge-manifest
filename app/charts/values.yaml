@@ -1,0 +1,115 @@
+# values.yaml
+
+# Namespace where the resources will be deployed
+namespace: core
+
+# Overrides the default name for resources
+nameOverride: tech-challenge
+
+# Image configuration
+image:
+  repository: fwcpereira/tech-challenge
+  tag: v3.0.0
+  pullPolicy: Always
+
+# Service configuration
+service:
+  type: ClusterIP
+  port: 3000
+
+# Configuration for environment variables
+config:
+  POSTGRES_DB: "tech_challenge"
+  PORT: "3000"
+  API_VERSION: "/v1"
+  POSTGRES_HOST: "postgresql.tool-database.svc.cluster.local"
+  NODE_ENV: "development"
+  APP_NAME: "application"
+  APP_KEY: "# ------ #"
+  APP_URL: "http://${HOST}:${PORT}"
+
+# Reference names for ConfigMap and Secret
+configMapRefName: tech-challenge
+secretRefName: tech-challenge
+
+# Deployment replicas
+replicaCount: 2
+
+# Termination grace period
+terminationGracePeriodSeconds: 30
+
+# Service account configuration
+serviceAccount:
+  create: true
+  name: tech-service-account
+  namespace: core
+  automount: true
+
+# Role and RoleBinding names
+role:
+  name: tech-role
+roleBinding:
+  name: tech-role-binding
+
+# Autoscaling configuration
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 45
+
+# Deployment strategy
+strategy:
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 1
+
+# Resource requests and limits
+resources:
+  requests:
+    memory: "350Mi"
+    cpu: "400m"
+  limits:
+    memory: "450Mi"
+    cpu: "600m"
+
+# Probes configuration
+livenessProbe:
+  httpGet:
+    path: /heathlz
+    port: 3000
+  initialDelaySeconds: 10
+  failureThreshold: 3
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 5
+
+readinessProbe:
+  httpGet:
+    path: /heathlz
+    port: 3000
+  initialDelaySeconds: 10
+  failureThreshold: 3
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
+
+startupProbe:
+  exec:
+    command:
+      - /bin/sh
+      - -c
+      - node -v
+  initialDelaySeconds: 5
+  successThreshold: 1
+  timeoutSeconds: 1
+
+# Labels to be applied to resources
+labels:
+  appName: tech-challenge
+  additionalLabels:
+    app: tech-challenge
+
+# Security contexts (if any)
+securityContext: {}
+podSecurityContext: {}
