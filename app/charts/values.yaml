@@ -66,13 +66,13 @@ strategy:
     maxUnavailable: 1
 
 # Resource requests and limits
-#resources:
-#  requests:
-#    memory: "550Mi"
-#    cpu: "500m"
-#  limits:
-#    memory: "750Mi"
-#    cpu: "700m"
+resources:
+  requests:
+    memory: "550Mi"
+    cpu: "500m"
+  limits:
+    memory: "750Mi"
+    cpu: "700m"
 
 # Probes configuration
 livenessProbe:
