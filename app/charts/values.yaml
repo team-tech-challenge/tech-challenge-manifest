@@ -19,6 +19,7 @@ service:
 
 # Configuration for environment variables
 config:
+  HOST: "localhost"
   POSTGRES_DB: "tech_challenge"
   PORT: "3000"
   API_VERSION: "/v1"
