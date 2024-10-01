@@ -26,7 +26,7 @@ config:
   NODE_ENV: "development"
   APP_NAME: "application"
   APP_KEY: "# ------ #"
-#  APP_URL: "http://${HOST}:${PORT}"
+  APP_URL: "http://${HOST}:${PORT}"
 
 # Reference names for ConfigMap and Secret
 configMapRefName: default-tech-challenge
@@ -65,13 +65,13 @@ strategy:
     maxUnavailable: 1
 
 # Resource requests and limits
-resources:
-  requests:
-    memory: "550Mi"
-    cpu: "500m"
-  limits:
-    memory: "750Mi"
-    cpu: "700m"
+#resources:
+#  requests:
+#    memory: "550Mi"
+#    cpu: "500m"
+#  limits:
+#    memory: "750Mi"
+#    cpu: "700m"
 
 # Probes configuration
 livenessProbe:
