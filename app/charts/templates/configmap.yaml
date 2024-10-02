@@ -14,3 +14,6 @@ data:
   APP_NAME: {{ .Values.config.APP_NAME | quote }}
   APP_KEY: {{ .Values.config.APP_KEY | quote }}
   APP_URL: {{ .Values.config.APP_URL | quote }}
+  HOST: {{ .Values.config.HOST | quote }}
+  WEBHOOK: {{ .Values.config.WEBHOOK | quote }}
+  MERCADOPAGO: {{ .Values.config.MERCADOPAGO | quote }}
