@@ -9,7 +9,7 @@ nameOverride: tech-challenge
 # Image configuration
 image:
   repository: 575403774961.dkr.ecr.us-east-1.amazonaws.com/tech-challenge
-  tag: "9dd2f6b"
+  tag: "94dd113"
   pullPolicy: Always
 
 # Service configuration
