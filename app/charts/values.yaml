@@ -28,6 +28,9 @@ config:
   APP_NAME: "application"
   APP_KEY: "# ------ #"
   APP_URL: "http://${HOST}:${PORT}"
+  WEBHOOK: "https://techchallenge.com.br"
+  MERCADOPAGO: "TEST-1223158960247728-051916-610ccc4ef810107ed75bd845b1ad29e6-151008103"
+
 
 # Reference names for ConfigMap and Secret
 configMapRefName: default-tech-challenge
