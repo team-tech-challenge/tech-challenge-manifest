@@ -35,3 +35,5 @@ override.tf.json
 terraform.rc
 .idea
 .DS_Store
+create_kustomization.sh
+grant_read_permissions.sh
