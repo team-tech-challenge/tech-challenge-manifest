@@ -8,8 +8,8 @@ nameOverride: tech-challenge
 
 # Image configuration
 image:
-  repository: 575403774961.dkr.ecr.us-east-1.amazonaws.com/tech-challenge
-  tag: "10c4582"
+  repository: 405445518215.dkr.ecr.us-east-1.amazonaws.com/products-service
+  tag: "ee10e19"
   pullPolicy: Always
 
 # Service configuration
