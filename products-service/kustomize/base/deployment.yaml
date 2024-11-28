@@ -14,7 +14,9 @@ spec:
         app: products-service
     spec:
       serviceAccountName: products-service-service-account
-      securityContext: {}
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
       containers:
         - name: products-service
           securityContext:
