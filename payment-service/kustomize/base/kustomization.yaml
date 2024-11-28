@@ -8,9 +8,4 @@ resources:
   - configmap.yaml
   - serviceaccount.yaml
   - roleBinding.yaml
-
-labels:
-  - pairs:
-      app: payment-service
-    includeSelectors: true
-    includeTemplates: true
+  - ingress.yaml
