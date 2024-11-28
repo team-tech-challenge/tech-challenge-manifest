@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: products-service-configmap
-  namespace: apps-products-service
-data: {}

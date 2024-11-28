@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: products-service-deployment
-  namespace: apps-products-service
+  name: payment-service-deployment
+  namespace: apps-payment-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: products-service
+      app: payment-service
   template:
     metadata:
       labels:
-        app: products-service
+        app: payment-service
     spec:
       containers:
-        - name: products-service
+        - name: payment-service
           image: ""
