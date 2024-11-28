@@ -18,4 +18,4 @@ spec:
   tls:
     - hosts:
         - payment.techchallenge.com.br
-      secretName: payment-techchallenge--tls
+      secretName: payment-techchallenge-tls
