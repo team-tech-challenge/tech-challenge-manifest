@@ -14,10 +14,7 @@ spec:
         app: products-service
     spec:
       serviceAccountName: products-service-service-account
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
-        fsGroup: 2000
+      securityContext: {}
       containers:
         - name: products-service
           securityContext:
@@ -67,13 +64,13 @@ spec:
             timeoutSeconds: 5
             successThreshold: 1
             failureThreshold: 10
-          resources:
-            limits:
-              cpu: "140m"
-              memory: "140Mi"
-            requests:
-              cpu: "40m"
-              memory: "128Mi"
+#          resources:
+#            limits:
+#              cpu: "140m"
+#              memory: "140Mi"
+#            requests:
+#              cpu: "40m"
+#              memory: "128Mi"
           volumeMounts:
             - name: config-volume
               mountPath: /app/config
