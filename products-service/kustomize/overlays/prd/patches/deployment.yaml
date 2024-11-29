@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - name: products-service
-          image: "405445518215.dkr.ecr.us-east-1.amazonaws.com/products-service:f07ce85"
+          image: "405445518215.dkr.ecr.us-east-1.amazonaws.com/products-service:cc4917e"
