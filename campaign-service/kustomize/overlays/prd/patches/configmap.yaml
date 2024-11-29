@@ -3,4 +3,14 @@ kind: ConfigMap
 metadata:
   name: campaign-service-configmap
   namespace: apps-campaign-service
-data: {}
+data:
+  HOST: '0.0.0.0'
+  PORT: '3000'
+  APP_URL: 'http://${HOST}:${PORT}'
+  NODE_ENV: 'production'
+  APP_NAME:  'application'
+  APP_KEY: '# ------ #'
+  API_VERSION: '/v1'
+  CUSTOMER_SERVICE_URL: 'http://customer-service:3000/api/customers'
+
+
