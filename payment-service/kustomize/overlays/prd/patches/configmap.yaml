@@ -3,4 +3,17 @@ kind: ConfigMap
 metadata:
   name: payment-service-configmap
   namespace: apps-payment-service
-data: {}
+data:
+  HOST: '0.0.0.0'
+  PORT: '3000'
+  APP_URL: 'http://${HOST}:${PORT}'
+  SWAGGER_BASE_URL: 'https://payment.techchallenge.com.br'
+  NODE_ENV: 'development'
+  APP_NAME: 'application'
+  API_VERSION: '/v1'
+  MONGODB_HOST: 'mongodb.tool-database.svc.cluster.local'
+  MONGODB_PORT: '27017'
+  WEBHOOK: 'https://payment.techchallenge.com.br'
+  ORDER_SERVICE_URL: 'http://order-service:3000/api/orders'
+  CUSTOMER_SERVICE_URL: 'http://customer-service:3000/api/customers'
+
