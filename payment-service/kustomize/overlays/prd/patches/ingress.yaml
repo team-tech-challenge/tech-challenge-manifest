@@ -5,17 +5,17 @@ metadata:
   namespace: apps-payment-service
 spec:
   rules:
-    - host: payment-service.tech.musa.co
+    - host: payment.techchallenge.com.br
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: payment-service-service
+                name: payment-service
                 port:
                   number: 3000
   tls:
     - hosts:
-        - payment-service.tech.musa.co
-      secretName: payment-service-tech-musa-co-tls
+        - payment.techchallenge.com.br
+      secretName: payment-techchallenge-tls
