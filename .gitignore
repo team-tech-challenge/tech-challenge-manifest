@@ -37,3 +37,4 @@ terraform.rc
 .DS_Store
 create_kustomization.sh
 grant_read_permissions.sh
+secret-users.yml
