@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
         - name: payment-service
-          image: "405445518215.dkr.ecr.us-east-1.amazonaws.com/payment-service:a17ee2c"
+          image: "405445518215.dkr.ecr.us-east-1.amazonaws.com/payment-service:8cb36f4"
