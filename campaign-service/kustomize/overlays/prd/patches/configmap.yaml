@@ -12,6 +12,6 @@ data:
   APP_KEY: '# ------ #'
   API_VERSION: '/v1'
   CUSTOMER_SERVICE_URL: 'http://users-service-service.apps-users-service.svc.cluster.local:3000'
-  POSTGRES_HOST: 'campaigns-service-postgresql.clwfjxlpe5hc.us-east-1.rds.amazonaws.com'
+  POSTGRES_HOST: 'products-service.clwfjxlpe5hc.us-east-1.rds.amazonaws.com'
 
 
