@@ -40,3 +40,4 @@ grant_read_permissions.sh
 secret-users.yml
 secret-payment.yml
 secret-order.yml
+secret-campaign.yml
