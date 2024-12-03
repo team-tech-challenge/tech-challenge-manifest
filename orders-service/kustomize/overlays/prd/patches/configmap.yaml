@@ -7,7 +7,7 @@ data:
   HOST: "0.0.0.0"
   PORT: "3000"
   API_VERSION: "/v1"
-  POSTGRES_HOST: "orders-service-postgresql.clwfjxlpe5hc.us-east-1.rds.amazonaws.com"
+  POSTGRES_HOST: "products-service.clwfjxlpe5hc.us-east-1.rds.amazonaws.com"
   NODE_ENV: "production"
   APP_NAME: "application"
   APP_KEY: "# ------ #"
