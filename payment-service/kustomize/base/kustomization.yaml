@@ -8,4 +8,3 @@ resources:
   - configmap.yaml
   - serviceaccount.yaml
   - roleBinding.yaml
-  - ingress.yaml
