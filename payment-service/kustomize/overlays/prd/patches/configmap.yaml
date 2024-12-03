@@ -14,6 +14,6 @@ data:
   MONGODB_HOST: 'mongodb.tool-database.svc.cluster.local'
   MONGODB_PORT: '27017'
   WEBHOOK: 'https://payment.techchallenge.com.br'
-  ORDER_SERVICE_URL: 'http://order-service:3000/api/orders'
-  CUSTOMER_SERVICE_URL: 'http://customer-service:3000/api/customers'
+  ORDER_SERVICE_URL: 'http://orders-service-service.apps-orders-service.svc.cluster.local:3000/api/orders'
+  CUSTOMER_SERVICE_URL: 'http://users-service-service.apps-users-service.svc.cluster.local:3000/api/customers'
 
