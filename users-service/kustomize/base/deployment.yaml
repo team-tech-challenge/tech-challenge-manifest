@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-service-deployment
+  namespace: apps-users-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users-service
+  template:
+    metadata:
+      labels:
+        app: users-service
+    spec:
+      serviceAccountName: users-service-service-account
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+      containers:
+        - name: users-service
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: false
+            runAsNonRoot: true
+          image: ""
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: users-service-configmap
+            - secretRef:
+                name: users-service-external-secret
+          livenessProbe:
+            httpGet:
+              path: /heathlz
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /heathlz
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 3
+            successThreshold: 1
+            failureThreshold: 3
+          startupProbe:
+            httpGet:
+              path: /heathlz
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 10
+#          resources:
+#            limits:
+#              cpu: "150m"
+#              memory: "156Mi"
+#            requests:
+#              cpu: "100m"
+#              memory: "128Mi"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+              subPath: config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: users-service-configmap
+      nodeSelector: {}
+      affinity: {}
+      tolerations: []
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
