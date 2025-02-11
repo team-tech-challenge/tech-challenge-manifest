@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service-deployment
+  namespace: core
+spec:
+  selector:
+    matchLabels:
+      app: hackathon
+  template:
+    metadata:
+      labels:
+        app: hackathon
+    spec:
+      containers:
+        - name: user-service
+          image: "630607855992.dkr.ecr.us-east-1.amazonaws.com/user-service:89126e6"
