@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: "630607855992.dkr.ecr.us-east-1.amazonaws.com/users-service:6ba9fbe"
+          image: "630607855992.dkr.ecr.us-east-1.amazonaws.com/users-service:11d2997"
