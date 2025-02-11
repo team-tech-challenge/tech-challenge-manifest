@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: video-service
-          image: "630607855992.dkr.ecr.us-east-1.amazonaws.com/video-service:89126e6"
+          image: "630607855992.dkr.ecr.us-east-1.amazonaws.com/video-service:86136dc"
